@@ -3,14 +3,20 @@
   "version": "1.0.3",
   "license": "MIT",
   "scripts": {
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn start\"",
     "start": "react-static start",
     "stage": "react-static build --staging",
     "build": "react-static build",
     "analyze": "react-static build --analyze",
+    "server": "nodemon server.js",
     "serve": "serve dist -p 3000"
   },
   "dependencies": {
     "@reach/router": "^1.2.1",
+    "axios": "^0.19.2",
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.2.0",
+    "express": "^4.17.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-hot-loader": "^4.12.21",
@@ -33,5 +39,6 @@
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^4.0.2",
     "serve": "^11.1.0"
-  }
+  },
+  "proxy": "http://localhost:5000/"
 }

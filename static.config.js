@@ -1,18 +1,28 @@
 import React from 'react';
+import axios from 'axios';
 
  const siteRoot = 'https://www.XXXXXXXXXX.com';
  const stagingSiteRoot = 'http://localhost:3000';
+ const stagingSiteServer = 'http://localhost:5000';
 
 // static.config.js
 export default {
-  getSiteData: () => ({
-    title: '',
-    siteRoot: siteRoot,
-    description: '',
-    imageUrl: `${siteRoot}/xxxxxx.png`,
-    imageWideUrl: `${siteRoot}/xxxxx.png`,
-    type: 'website',
-  }),
+  getSiteData: async ({ dev }) => {
+    const { data: data } = await axios.get(
+      `${stagingSiteServer}/api/hello`
+    )
+
+    // console.log(data.express);
+
+    return {
+      title: '',
+      siteRoot: siteRoot,
+      description: '',
+      imageUrl: `${siteRoot}/xxxxxx.png`,
+      imageWideUrl: `${siteRoot}/xxxxx.png`,
+      type: 'website',
+    }
+  },
   plugins: ["react-static-plugin-sass"],
   siteRoot: siteRoot,
   stagingSiteRoot: stagingSiteRoot,
@@ -20,6 +30,10 @@ export default {
     {
       path: '/',
       template: 'src/Components/Home',
+    },
+    {
+      path: 'about',
+      template: 'src/Components/About',
     },
     {
       path: 'about',
