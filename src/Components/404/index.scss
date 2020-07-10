@@ -1,0 +1,26 @@
+@import '../../shared-styles/variables.scss';
+@import '../../shared-styles/mixins.scss';
+
+.page-404 {
+  height: 100vh;
+  width: 100%;
+  background: $color-primary;
+
+  .wrap {
+    @include center-both();
+
+    font-family: $font-family;
+    text-align: center;
+    color: $color-white;
+    font-size: $font-size-md;
+  }
+
+  .h1 {
+    font-size: $font-size-lg * 2;
+    font-family: $font-family;
+    margin-bottom: 1rem;
+  }
+
+  .h2 {
+  }
+}

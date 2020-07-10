@@ -1,0 +1,289 @@
+@import './shared-styles/variables.scss';
+@import './shared-styles/mixins.scss';
+
+$menu-margin-x: 2.5vw;
+$logo-size: 4rem;
+$logo-size-m: 3rem;
+$flex-padding: 1.25rem;
+
+.page {
+  position: relative;
+  width: $page-width;
+  background: $color-primary;
+  color: $color-white;
+  margin: 0 auto;
+
+  .content-section {
+    margin-bottom: 2.75rem;
+    line-height: $line-height;
+  }
+
+  .header-logo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    // sit on top of nav for link to work
+    z-index: 3;
+
+    img {
+      margin: $menu-margin-x;
+      max-width: $logo-size;
+    }
+  }
+
+  .nav-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    text-align: right;
+    z-index: 2;
+  }
+
+  .menu-ul {
+    margin: $menu-margin-x 5vw;
+
+    a {
+      color: $color-white;
+      cursor: pointer;
+      line-height: $logo-size;
+    }
+  }
+
+  .menu-li {
+    display: inline-block;
+    margin: 0 2rem;
+    font-size: $font-size-md;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .footer {
+    position: absolute;
+    width: 100%;
+    background: $color-primary;
+    text-align: center;
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 3em;
+    }
+
+    span, a {
+      opacity: .9;
+      color: white;
+    }
+    span {
+      font-size: 1.75rem;
+      margin: 0 .75rem;
+    }
+
+    a {
+      cursor: pointer;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  .footer-inner {
+    padding: 1rem 0;
+    display: inline;
+    margin: 0 auto;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .screen-content-above-fold {
+    .h1-wrap {
+      position: absolute;
+      left: 0;
+      right: 0;
+      text-align: center;
+      bottom: 7.5vh;
+      font-size: 1.6vw;
+      color: $color-white;
+    }
+
+    .h1 {
+      width: 23.1em;
+      margin: 0 auto;
+
+      img {
+        margin-left: -1.1em;
+        width: 100%;
+      }
+    }
+
+    .h2 {
+      margin-top: .05em;
+      font-size: 1.39em;
+      font-weight: 300;
+      font-family: $font-family;
+      letter-spacing: 0.02em;
+    }
+  }
+
+  .screen-content-above-fold-short {
+    height: 40vh;
+    position: relative;
+    min-height: none;
+    max-width: none;
+    padding: 0;
+    min-height: 300px;
+    left: 0;
+    top: 0;
+    width: 100%;
+
+
+    .img-background {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 35% 50%;
+    }
+  }
+
+  // todo: Move to a new section;
+  .profile-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -$flex-padding;
+    margin-right: -$flex-padding;
+  }
+
+  .profile-wrap {
+    width: 33.3333%;
+    height: 100%;
+    box-sizing: border-box;
+    display: block;
+    padding: $flex-padding/2 $flex-padding;
+
+    p {
+      font-size: $font-size-base;
+      line-height: $line-height-sm;
+      text-align: justify;
+    }
+  }
+
+  .profile-name,
+  .profile-title {
+    text-align: center;
+    font-weight: $font-weight-bold;
+    line-height: 1em;
+
+    .bold-not {
+      font-weight: 100;
+    }
+  }
+
+  .profile-name {
+    margin-bottom: .25rem;
+  }
+
+  .profile-title {
+    font-size: $font-size-base;
+    margin-bottom: .5rem;
+    font-style: italic;
+  }
+
+  .profile-img {
+    width: 100%;
+    margin-bottom: .25rem;
+
+    &.crop-circle {
+      overflow: hidden;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+  // endtodo: Move to a new section;
+
+  .media-wrap {
+    margin-bottom: 1.25rem;
+  }
+
+  .disclaimer {
+    font-size: $font-size-base;
+    font-style: italic;
+    // temp rule
+    margin-top: 1.5rem;
+  }
+
+  @media screen and (max-width: $screen-size-mobile) {
+    .screen-content-above-fold {
+      .h1-wrap {
+        font-size: 3.25vw;
+      }
+    }
+
+    .menu-ul {
+      margin-top: $logo-size-m / 2;
+
+      a {
+        line-height: $logo-size-m;
+      }
+    }
+
+    .header-logo {
+      img {
+        margin: $logo-size-m / 2;
+        max-width: $logo-size-m;
+      }
+    }
+
+    .menu-li {
+      margin: 0 .8rem;
+    }
+
+    .footer-inner {
+      margin: 0 auto;
+      display: block;
+      font-size: 1.2rem;
+
+      span {
+        display: block;
+        margin: 1rem;
+      }
+    }
+
+    .profile-row {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: -$flex-padding;
+      margin-right: -$flex-padding;
+    }
+
+    .profile-wrap {
+      width: 100%;
+      box-sizing: border-box;
+      display: block;
+      padding: $flex-padding;
+    }
+
+    .h2 {
+      margin-top: .2em;
+    }
+  }
+
+  .captioned-media {
+    width: 100%;
+    margin: 2rem auto 1rem auto;
+    display: block;
+  }
+
+  .caption {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    font-style: italic;
+    font-size: .8em;
+  }
+}

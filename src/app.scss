@@ -1,0 +1,130 @@
+@import './shared-styles/variables.scss';
+@import './shared-styles/mixins.scss';
+@import './shared-styles/reset.scss';
+@import './shared-styles/fontello/css/fontello.css';
+@import './page.scss';
+
+html,
+body {
+  font-size: $font-size-sm;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  .page {
+    // when these were added to just the body, they weren't winning out for some reason
+    // Note: this was due to this bug: https://github.com/webpack-contrib/extract-text-webpack-plugin/issues/200
+    // Fix for now is to make the reset.css a reset.scss.
+    font-family: $font-family;
+    letter-spacing: $letter-spacing;
+    font-size: $font-size-sm;
+  }
+}
+
+i {
+  font-style: italic;
+}
+
+.page {
+  position: relative;
+  width: $page-width;
+  background: $color-primary;
+  color: $color-white;
+  margin: 0 auto;
+}
+
+.page-screen {
+  position: relative;
+  min-height: 100vh;
+  background: white;
+  color: $color-primary;
+}
+
+a {
+  text-decoration: none;
+  color: $color-link;
+}
+
+p {
+  margin-bottom: 1rem;
+
+  &.block {
+    display: inline-block;
+  }
+}
+
+.h1,
+.h2,
+.h3 {
+  line-height: 1em;
+}
+
+button {
+  border: none;
+}
+
+.react-static-loading {
+  // git rid of the spinning loader. It's distracting.
+  display: none !important;
+
+  svg {
+    @include center-both();
+  }
+}
+
+.screen-content {
+  // the 6rem leaves enough room for the globe footer
+  padding: 5vh 5vw 3rem 5vw;
+  max-width: 40rem;
+  margin: 0 auto;
+
+  .h2 {
+    font-size: $font-size-lg;
+    font-family: $font-family-bold;
+    font-weight: $font-weight-bold;
+    margin: .75rem 0;
+  }
+
+  .h3 {
+    font-size: $font-size-md;
+    font-family: $font-family-bold;
+    font-weight: $font-weight-bold;
+    margin-bottom: .65rem;
+  }
+
+  &.screen-content-dark {
+    a {
+      color: $color-white;
+      text-decoration: underline;
+    }
+  }
+}
+
+.info-link-list {
+  margin-bottom: 1rem;
+}
+
+.info-link {
+  margin-bottom: 0.75rem;
+}
+
+.hide-desktop {
+  display: none;
+}
+
+@media screen and (max-width: $screen-size-mobile) {
+  html,
+  body {
+    font-size: $font-size-base;
+  }
+
+  .hide-mobile {
+    display: none;
+  }
+
+  .hide-desktop {
+    display: block !important;
+  }
+}

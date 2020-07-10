@@ -1,0 +1,82 @@
+@import './variables.scss';
+
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}
+
+@mixin full-size() {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+}
+
+@mixin center-vert() {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@mixin center-horz() {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@mixin center-both() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+@mixin flex-wrap() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .flex-item {
+    max-width: 50%;
+
+    &--top {
+      align-self: flex-start;
+    }
+    &--bottom {
+      align-self: flex-end;
+    }
+  }
+}
+
+@mixin small-text() {
+  font-size: $font-size-sm-x;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-small-text;
+  font-weight: $font-weight-bold;
+}
+
+@mixin hover-effect() {
+  opacity: $opacity-off-hover;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+@mixin hover-effect-link() {
+  @include hover-effect();
+
+  &:hover {
+    color: $color-link;
+  }
+}
+
+@mixin hover-scale() {
+  transform: scale($icon-hover-scale);
+  transition: $animation-transition;
+  transition-property: transform;
+}
