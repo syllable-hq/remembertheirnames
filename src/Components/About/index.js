@@ -12,25 +12,7 @@ class About extends React.Component {
         <div className="header-logo">
         logo
         </div>
-
         <Navbar/>
-
-        <div className="page-screen">
-          <div className="screen-content screen-content-above-fold">
-            <ScrollLink
-              to="belowfold"
-              smooth={true}
-              duration={500}
-              className="scroll-link"
-            >
-              <div className="h1-wrap">
-                <h1>
-                  Header
-                </h1>
-              </div>
-            </ScrollLink>
-          </div>
-        </div>
         <div className="page-screen"
           name="belowfold"
           id="belowfold"
