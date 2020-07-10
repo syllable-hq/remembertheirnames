@@ -9,8 +9,6 @@ $flex-padding: 1.25rem;
 .page {
   position: relative;
   width: $page-width;
-  background: $color-primary;
-  color: $color-white;
   margin: 0 auto;
 
   .content-section {
@@ -20,8 +18,8 @@ $flex-padding: 1.25rem;
 
   .header-logo {
     position: absolute;
-    left: 0;
-    top: 0;
+    left: 1rem;
+    top: 1rem;
     // sit on top of nav for link to work
     z-index: 3;
 
@@ -32,7 +30,7 @@ $flex-padding: 1.25rem;
   }
 
   .nav-content {
-    position: absolute;
+    position: relative;
     left: 0;
     right: 0;
     top: 0;
@@ -44,7 +42,6 @@ $flex-padding: 1.25rem;
     margin: $menu-margin-x 5vw;
 
     a {
-      color: $color-white;
       cursor: pointer;
       line-height: $logo-size;
     }
