@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 
  const siteRoot = 'https://www.XXXXXXXXXX.com';
  const stagingSiteRoot = 'http://localhost:3000';
@@ -8,11 +8,9 @@ import axios from 'axios';
 // static.config.js
 export default {
   getSiteData: async ({ dev }) => {
-    const { data: data } = await axios.get(
-      `${stagingSiteServer}/api/hello`
-    )
-
-    // console.log(data.express);
+    // const { data: souls } = await axios.get(
+    //   `${stagingSiteServer}/api/souls`
+    // )
 
     return {
       title: '',
@@ -36,13 +34,17 @@ export default {
       template: 'src/Components/About',
     },
     {
-      path: 'about',
-      template: 'src/Components/About',
+      path: 'memorial',
+      template: 'src/Components/Memorial',
+    },
+    {
+      path: 'memorial2',
+      template: 'src/Components/Memorial2',
     },
     {
       path: '404',
       template: 'src/Components/404',
-    },
+    }
   ],
   Document: ({
     Html,
@@ -67,7 +69,6 @@ export default {
           <link rel="preload" as="font" href="/fonts/Matter-SemiBold.woff" type="font/woff" crossOrigin="anonymous"/>
           <link rel="canonical" href={canonicalUrl} />
 
-
           <title>{siteData.title}</title>
           <meta name="title" content={siteData.title} />
           <meta name="description" content={siteData.description} />
@@ -82,6 +83,7 @@ export default {
           <meta property="twitter:title" content={siteData.title} />
           <meta property="twitter:description" content={siteData.description} />
           <meta property="twitter:image" content={siteData.imageWideUrl} />
+
         </Head>
         <Body>{children}</Body>
       </Html>

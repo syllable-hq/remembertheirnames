@@ -7,7 +7,7 @@ import './index.scss';
 
 const stagingSiteServer = 'http://localhost:5000';
 
-class Home extends React.Component {
+class Memorial extends React.Component {
 constructor(props) {
   super(props)
     this.state = {
@@ -29,11 +29,9 @@ constructor(props) {
 
   render() {
     return (
-      <div className={`page page-home`}>
-        <div className="header-logo">
-        logo
-        </div>
+      <div className={`page page-memorial`}>
         <Navbar/>
+
         <div className="page-screen"
           name="belowfold"
           id="belowfold"
@@ -81,4 +79,4 @@ constructor(props) {
   }
 }
 
-export default Home;
+export default Memorial;

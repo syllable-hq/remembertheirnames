@@ -1,0 +1,60 @@
+@import '../../shared-styles/variables.scss';
+@import '../../shared-styles/mixins.scss';
+
+.page-memorial2 {
+  background-image: url('/black-marble.jpg');
+  background-repeat: repeat;
+
+  &:after {
+    @include full-size();
+    z-index: 0;
+    content: '';
+    background: rgba(0,0,0,.7);
+  }
+
+  .screen-content {
+    max-width: none;
+    padding-top: 5rem;
+    font-family: 'Lusitana-Bold';
+    letter-spacing: .07em;
+
+    position: relative;
+    z-index: 1;
+    min-height: 200vh;
+    font-size: 1.5rem;
+    opacity: .8;
+
+    color: #999;
+    color: rgba(0,0,0,.4);
+    // background: rgba(255,255,255,.3);
+    // text-shadow: -.005em .01em .01em rgba(255,255,255,.9), .005em -.01em .0005em rgba(0,0,0,.8);
+    text-shadow: -.005em .01em .01em rgba(255,255,255,.9);
+  }
+
+  .memorial-list-wrap {
+    margin-top: 2rem;
+    overflow: hidden;
+  }
+
+  .memorial-list {
+    margin-left: -.8em;
+
+    .memorial-list-item {
+      display: inline-block;
+      line-height: 2em;
+      white-space: nowrap;
+      // margin-bottom: 1rem;
+
+      span {
+        position: relative;
+        margin: 0 .25em;
+        // left: -25px;
+        // transform: translateX(250px);
+
+        &:first-child {
+          visibility: none;
+        }
+      }
+    }
+  }
+}

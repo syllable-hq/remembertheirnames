@@ -23,6 +23,16 @@ $color-link: #4A86E8;
        url('/fonts/Matter-SemiBold.woff') format('woff');
 }
 
+@font-face {
+    font-family: 'Lusitana-Bold';
+    src:url('/fonts/Lusitana-Bold.ttf.woff') format('woff'),
+        url('/fonts/Lusitana-Bold.ttf.svg#Lusitana-Bold') format('svg'),
+        url('/fonts/Lusitana-Bold.ttf.eot'),
+        url('/fonts/Lusitana-Bold.ttf.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 $font-family-bold: 'Matter-SemiBold', serif; //sans-serif;
 
 $font-family: 'Matter-Regular', serif; //sans-serif;
