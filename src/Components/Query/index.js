@@ -7,7 +7,7 @@ import './index.scss';
 
 const stagingSiteServer = 'http://localhost:5000';
 
-class Home extends React.Component {
+class Query extends React.Component {
 constructor(props) {
   super(props)
     this.state = {
@@ -29,11 +29,9 @@ constructor(props) {
 
   render() {
     return (
-      <div className={`page page-home`}>
-        <div className="header-logo">
-        logo
-        </div>
+      <div className={`page page-query`}>
         <Navbar/>
+
         <div className="page-screen"
           name="belowfold"
           id="belowfold"
@@ -43,7 +41,26 @@ constructor(props) {
               <h2 className="h2">
                 In Memoriam
               </h2>
-              Todo
+              {
+                this.state.souls &&
+                <ul className="query-list">
+                {
+                  this.state.souls.map( (soul, idx) => (
+                    <li key={`soul-${idx}`}>
+                      <div>
+                        Name: {soul.name}
+                      </div>
+                      <div>
+                        Born on: {soul.birthDate}
+                      </div>
+                      <div>
+                        Died on: {soul.deathDate}
+                      </div>
+                    </li>
+                  ))
+                }
+                </ul>
+              }
             </div>
           </div>
         </div>
@@ -62,4 +79,4 @@ constructor(props) {
   }
 }
 
-export default Home;
+export default Query;

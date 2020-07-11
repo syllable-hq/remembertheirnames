@@ -1,7 +1,7 @@
 import React from 'react';
 // import axios from 'axios';
 
- const siteRoot = 'https://www.XXXXXXXXXX.com';
+ const siteRoot = 'https://remembertheirnames.netlify.app';
  const stagingSiteRoot = 'http://localhost:3000';
  const stagingSiteServer = 'http://localhost:5000';
 
@@ -34,12 +34,12 @@ export default {
       template: 'src/Components/About',
     },
     {
-      path: 'memorial',
-      template: 'src/Components/Memorial',
+      path: 'query',
+      template: 'src/Components/Query',
     },
     {
-      path: 'memorial2',
-      template: 'src/Components/Memorial2',
+      path: 'memorial',
+      template: 'src/Components/Memorial',
     },
     {
       path: '404',

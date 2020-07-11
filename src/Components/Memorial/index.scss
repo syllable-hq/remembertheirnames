@@ -9,24 +9,52 @@
     @include full-size();
     z-index: 0;
     content: '';
-    background: rgba(0,0,0,.5);
+    background: rgba(0,0,0,.7);
   }
 
   .screen-content {
+    max-width: none;
+    padding-top: 5rem;
+    font-family: 'Lusitana-Bold';
+    letter-spacing: .07em;
+
     position: relative;
     z-index: 1;
     min-height: 200vh;
-    // font-size: 6rem;
+    font-size: 1.5rem;
     opacity: .8;
-    color: rgba(100,100,100,.9);
+
+    color: #999;
+    color: rgba(0,0,0,.4);
     // background: rgba(255,255,255,.3);
-    text-shadow: -.005em .01em .01em rgba(255,255,255,.8), .005em -.01em .0005em rgba(0,0,0,.8);
+    // text-shadow: -.005em .01em .01em rgba(255,255,255,.9), .005em -.01em .0005em rgba(0,0,0,.8);
+    text-shadow: -.005em .01em .01em rgba(255,255,255,.9);
+  }
+
+  .memorial-list-wrap {
+    margin-top: 2rem;
+    overflow: hidden;
   }
 
   .memorial-list {
-    margin-top: 2rem;
-    li {
-      margin-bottom: 1rem;
+    margin-left: -.8em;
+
+    .memorial-list-item {
+      display: inline-block;
+      line-height: 2em;
+      white-space: nowrap;
+      // margin-bottom: 1rem;
+
+      span {
+        position: relative;
+        margin: 0 .25em;
+        // left: -25px;
+        // transform: translateX(250px);
+
+        &:first-child {
+          visibility: none;
+        }
+      }
     }
   }
 }
