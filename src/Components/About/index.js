@@ -13,11 +13,8 @@ class About extends React.Component {
         logo
         </div>
         <Navbar/>
-        <div className="page-screen"
-          name="belowfold"
-          id="belowfold"
-        >
-          <div className="screen-content screen-content-below-fold">
+        <div className="page-screen">
+          <div className="screen-content">
             <div className="content-section">
               <h2 className="h2">
                 About

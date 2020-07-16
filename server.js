@@ -27,8 +27,16 @@ app.use(cors({
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/api/souls', (req, res) => {
-  res.send(sampleJson.souls);
+app.get('/records', (req, res) => {
+  res.send(sampleJson.records);
+});
+
+app.get('/records-long', (req, res) => {
+  res.send(sampleJson.sampleRecordsLong);
+});
+
+app.get('/test', (req, res) => {
+  res.send(sampleJson.sampleRecordsLong);
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

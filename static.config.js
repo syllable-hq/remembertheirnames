@@ -8,8 +8,8 @@ import React from 'react';
 // static.config.js
 export default {
   getSiteData: async ({ dev }) => {
-    // const { data: souls } = await axios.get(
-    //   `${stagingSiteServer}/api/souls`
+    // const { data: records } = await axios.get(
+    //   `${stagingSiteServer}/records`
     // )
 
     return {

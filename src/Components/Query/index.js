@@ -3,23 +3,24 @@ import Navbar from "../Navbar";
 import { Link } from '@reach/router'
 import { Link as ScrollLink } from "react-scroll";
 import axios from 'axios';
-import './index.scss';
 
 const stagingSiteServer = 'http://localhost:5000';
+const recordSet = 'records';
+// const recordSet = 'records-long';
 
 class Query extends React.Component {
-constructor(props) {
-  super(props)
+  constructor(props) {
+    super(props)
     this.state = {
-      souls: [],
+      records: [],
     }
   }
 
   componentDidMount() {
-    axios.get(`${stagingSiteServer}/api/souls`)
+    axios.get(`${stagingSiteServer}/${recordSet}`)
     .then(response => {
       this.setState({
-        souls: response.data,
+        records: response.data,
       })
     })
     .catch(error => {
@@ -28,50 +29,36 @@ constructor(props) {
   }
 
   render() {
+    const records = this.state.records;
     return (
       <div className={`page page-query`}>
-        <Navbar/>
 
-        <div className="page-screen"
-          name="belowfold"
-          id="belowfold"
-        >
-          <div className="screen-content screen-content-below-fold">
+        <div className="page-screen">
+          <div className="screen-content">
             <div className="content-section">
-              <h2 className="h2">
-                In Memoriam
-              </h2>
-              {
-                this.state.souls &&
-                <ul className="query-list">
+              <div className="memorial-list-wrap">
                 {
-                  this.state.souls.map( (soul, idx) => (
-                    <li key={`soul-${idx}`}>
-                      <div>
-                        Name: {soul.name}
-                      </div>
-                      <div>
-                        Born on: {soul.birthDate}
-                      </div>
-                      <div>
-                        Died on: {soul.deathDate}
-                      </div>
-                    </li>
-                  ))
+                  records.length > 0 &&
+                  <ul className="memorial-list">
+                  {
+                    records.map((record, idx) => (
+                      <li key={`record-${idx}`}>
+                        <div>
+                          Name: {record.name}
+                        </div>
+                        <div>
+                          Born on: {record.birthDate}
+                        </div>
+                        <div>
+                          Died on: {record.deathDate}
+                        </div>
+                      </li>
+                    ))
+                  }
+                  </ul>
                 }
-                </ul>
-              }
+              </div>
             </div>
-          </div>
-        </div>
-
-        <div className="footer">
-          <div className="footer-inner">
-            <Link
-                to="/"
-              >
-                logo
-            </Link>
           </div>
         </div>
       </div>
