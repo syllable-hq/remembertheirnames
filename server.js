@@ -31,12 +31,19 @@ app.get('/records', (req, res) => {
   res.send(sampleJson.records);
 });
 
-app.get('/records-long', (req, res) => {
-  res.send(sampleJson.sampleRecordsLong);
-});
+app.get('/records/:recordId', (req, res) => {
+  const recordId = req.params.recordId;
 
-app.get('/test', (req, res) => {
-  res.send(sampleJson.sampleRecordsLong);
+  // note: Just a demo. A real API would be more robust.
+  const record = sampleJson.records[recordId];
+
+  if (record) {
+    res.send(record)
+  }
+  else {
+    res.status(500)
+    res.send('record id not found')
+  }
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

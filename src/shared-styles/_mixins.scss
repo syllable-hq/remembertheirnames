@@ -1,7 +1,7 @@
 @import './variables.scss';
 
 @mixin clearfix {
-  &::after {
+  &:after {
     clear: both;
     content: "";
     display: table;
@@ -17,22 +17,22 @@
 }
 
 @mixin center-vert() {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 @mixin center-horz() {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 @mixin center-both() {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
 }
 
 @mixin flex-wrap() {
@@ -79,4 +79,70 @@
   transform: scale($icon-hover-scale);
   transition: $animation-transition;
   transition-property: transform;
+}
+
+@mixin memorial-page() {
+  background-image: url('/black-marble.jpg');
+  background-repeat: repeat;
+  line-height: $line-height;
+
+  &:after {
+    @include full-size();
+    z-index: 0;
+    content: '';
+    background: rgba(0,0,0,.7);
+  }
+
+  .page-screen {
+    padding: 5vh 7vw;
+    font-family: 'Lusitana-Bold';
+    letter-spacing: .07em;
+    position: relative;
+    z-index: 1;
+  }
+
+  .tribute-header {
+    text-transform: uppercase;
+
+    span {
+      display: block;
+    }
+  }
+
+  .memorial-list-item,
+  .tribute-content {
+    &, a {
+      color: rgba(0,0,0,.4);
+      opacity: .8;
+      text-shadow: -.005em .02em .01em rgba(255,250,239,.9);
+    }
+  }
+
+  .tribute-content-single {
+    // todo: #matchTextShadow just the spread is different
+    text-shadow: -.005em .02em .01em rgba(255,250,239,.9), 0 .1em 8em $color-glow;
+    line-height: 2em;
+
+    .life-dates {
+      font-size: .7em;
+    }
+  }
+
+  .memorial-list-item a {
+    transition: $transitionTyp;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+
+    &:hover,
+    &:focus {
+      transition: all 0.2s ease-in;
+      color: $color-glow;
+      transform: scale(1.05);
+      transform-origin: 50% 50%;
+      // todo: #matchTextShadow
+      text-shadow: -.005em .02em .01em rgba(255,250,239,.9), 0 .1em 1em $color-glow;
+      transition: $transitionTyp;
+    }
+  }
 }

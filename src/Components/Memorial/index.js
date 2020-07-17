@@ -1,13 +1,10 @@
 import React, { lazy, Suspense } from 'react'
 import Navbar from "../Navbar";
 import { Link } from '@reach/router'
-import { Link as ScrollLink } from "react-scroll";
 import axios from 'axios';
 import './index.scss';
 
 const stagingSiteServer = 'http://localhost:5000';
-// const recordSet = 'records';
-const recordSet = 'records-long';
 
 class Memorial extends React.Component {
   constructor(props) {
@@ -18,7 +15,7 @@ class Memorial extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`${stagingSiteServer}/${recordSet}`)
+    axios.get(`${stagingSiteServer}/records`)
     .then(response => {
       this.setState({
         records: response.data,
@@ -31,31 +28,28 @@ class Memorial extends React.Component {
 
   render() {
     const records = this.state.records;
-    debugger;
+
     return (
       <div className={`page page-memorial`}>
-
         <div className="page-screen">
-          <div className="screen-content">
-            <div className="content-section">
-              <div className="memorial-list-wrap">
-                {
-                  records.length > 0 &&
-                  <ul className="memorial-list">
-                  {
-                    records.map((record, idx) => (
-                      <li key={`record-${idx}`} className="memorial-list-item">
-                        {
-                          <span>•</span>
-                        }
-                        {record.name}
-                      </li>
-                    ))
-                  }
-                  </ul>
-                }
-              </div>
-            </div>
+          <div className="memorial-list-wrap">
+            {
+              records.length > 0 &&
+              <ul className="memorial-list">
+              {
+                records.map((record, idx) => (
+                  <li key={`record-${idx}`} className="memorial-list-item">
+                    {
+                      <span>•</span>
+                    }
+                    <Link to={`/memorial/tributes/${record.id}`} className="tribute-content">
+                      {record.name}
+                    </Link>
+                  </li>
+                ))
+              }
+              </ul>
+            }
           </div>
         </div>
       </div>

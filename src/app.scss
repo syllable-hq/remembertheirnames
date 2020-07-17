@@ -36,6 +36,7 @@ i {
 .page-screen {
   position: relative;
   min-height: 100vh;
+  box-sizing: border-box;
   color: $color-primary;
 }
 
@@ -71,10 +72,19 @@ button {
 }
 
 .screen-content {
-  // the 6rem leaves enough room for the globe footer
+  // the 3rem leaves enough room for the globe footer
   padding: 5vh 5vw 3rem 5vw;
   max-width: 40rem;
   margin: 0 auto;
+  line-height: $line-height;
+
+  .content-section {
+    margin-bottom: 2.75rem;
+  }
+
+  .subtitle {
+    font-style: italic;
+  }
 
   .title-wrap {
     margin: 1rem 0;

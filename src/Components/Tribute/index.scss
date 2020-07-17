@@ -1,0 +1,19 @@
+@import '../../shared-styles/variables.scss';
+@import '../../shared-styles/mixins.scss';
+
+.page-tribute {
+  @include memorial-page();
+
+
+  .screen-content {
+    @include center-both();
+    width: 100%;
+
+    font-size: $font-size-lg;
+    text-align: center;
+  }
+
+  .memorial-name {
+    font-size: 2em;
+  }
+}

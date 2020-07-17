@@ -11,28 +11,6 @@ $flex-padding: 1.25rem;
   width: $page-width;
   margin: 0 auto;
 
-  .content-section {
-    margin-bottom: 2.75rem;
-    line-height: $line-height;
-  }
-
-  .subtitle {
-    font-style: italic;
-  }
-
-  // .header-logo {
-  //   position: absolute;
-  //   left: 1rem;
-  //   top: 1rem;
-  //   // sit on top of nav for link to work
-  //   z-index: 3;
-
-  //   img {
-  //     margin: $menu-margin-x;
-  //     max-width: $logo-size;
-  //   }
-  // }
-
   .nav-content {
     position: relative;
     left: 0;
@@ -117,13 +95,6 @@ $flex-padding: 1.25rem;
         line-height: $logo-size-m;
       }
     }
-
-    // .header-logo {
-    //   img {
-    //     margin: $logo-size-m / 2;
-    //     max-width: $logo-size-m;
-    //   }
-    // }
 
     .menu-li {
       margin: 0 .8rem;

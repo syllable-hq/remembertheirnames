@@ -2,6 +2,11 @@ $color-primary: #222;
 $color-white: #ffffff;
 // blueberry
 $color-link: #4A86E8;
+// yellow
+// $color-glow: rgba(253, 236, 110, .6);
+// blue
+$color-glow: rgba(110, 225, 253, .6);
+$color-glow-faded: rgba(110, 225, 253, .3);
 
 @font-face {
   font-family: 'Matter-Regular';
@@ -52,3 +57,4 @@ $screen-size-mobile: 50rem;
 $screen-size-tiny: 25rem;
 
 $page-width: 100%;
+$transitionTyp: all 0.02s ease-in;

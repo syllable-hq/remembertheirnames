@@ -1,12 +1,9 @@
 import React, { lazy, Suspense } from 'react'
 import Navbar from "../Navbar";
 import { Link } from '@reach/router'
-import { Link as ScrollLink } from "react-scroll";
 import axios from 'axios';
 
 const stagingSiteServer = 'http://localhost:5000';
-const recordSet = 'records';
-// const recordSet = 'records-long';
 
 class Query extends React.Component {
   constructor(props) {
@@ -17,7 +14,7 @@ class Query extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`${stagingSiteServer}/${recordSet}`)
+    axios.get(`${stagingSiteServer}/records`)
     .then(response => {
       this.setState({
         records: response.data,

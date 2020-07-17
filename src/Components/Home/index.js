@@ -1,7 +1,6 @@
 import React, { lazy, Suspense } from 'react'
 import Navbar from "../Navbar";
 import { Link } from '@reach/router'
-import { Link as ScrollLink } from "react-scroll";
 import axios from 'axios';
 import './index.scss';
 

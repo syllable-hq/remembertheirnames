@@ -2,34 +2,7 @@
 @import '../../shared-styles/mixins.scss';
 
 .page-memorial {
-  background-image: url('/black-marble.jpg');
-  background-repeat: repeat;
-
-  &:after {
-    @include full-size();
-    z-index: 0;
-    content: '';
-    background: rgba(0,0,0,.7);
-  }
-
-  .screen-content {
-    max-width: none;
-    padding-top: 5rem;
-    font-family: 'Lusitana-Bold';
-    letter-spacing: .07em;
-
-    position: relative;
-    z-index: 1;
-    min-height: 200vh;
-    font-size: 1.5rem;
-    opacity: .8;
-
-    color: #999;
-    color: rgba(0,0,0,.4);
-    // background: rgba(255,255,255,.3);
-    // text-shadow: -.005em .01em .01em rgba(255,255,255,.9), .005em -.01em .0005em rgba(0,0,0,.8);
-    text-shadow: -.005em .01em .01em rgba(255,255,255,.9);
-  }
+  @include memorial-page();
 
   .memorial-list-wrap {
     margin-top: 2rem;
